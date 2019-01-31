@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/
+xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejemplo de código JavaScript en el propio documento</title>
+</head>
+<body>
+<p onclick="alert('Un mensaje de prueba')">Un párrafo de texto.</p>
+
+<script type="text/javascript">
+	var n1=1;
+	var n2=2;
+    var res =n1+n2;
+    var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+  //  for (var i = dias.length - 1; i >= 0; i--) {
+    //	alert(dias[i]);
+    //}
+    var tarjeta= prompt('INGRESA EL NUMERO DE TU TARJETA');
+   	var sep=[...tarjeta];
+   	var total=0;
+   	var temp=0;
+	var temp2=0;
+	var numero_individual=0;
+	var residuo_total=0;
+   	var tempst='';
+   	var vtemp=[];
+   	//alert(sep[1]);
+   	var par=sep.length;
+   	//alert (par+'numero');
+
+
+   	for (var i = par-2; i >= 0; i=i-2) {
+
+   		temp=sep[i]*2;
+   		tempst=temp+'';
+   		vtemp=[...tempst];
+   		for (var j = 0; j <= vtemp.length-1; j++) {
+
+   			//alert(vtemp[j]);
+			numero_individual=parseInt(vtemp[j]);
+			total=total+numero_individual;
+   		}
+	   }
+		
+
+			for (var i = par-1; i >= 0; i=i-2) {
+				temp2=parseInt(sep[i]);
+				total=total+temp2;
+   			}
+		residuo_total=total%10;
+//		alert(residuo_total+'residuo');
+
+		if(residuo_total==0){
+			alert('Tarjeta Valida');
+		}
+		else{
+			alert('Tarjeta Invalida');
+		}
+
+
+
+
+</script>
+
+
+</body>
+</html>
